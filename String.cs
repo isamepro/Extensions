@@ -22,6 +22,16 @@ namespace IsameprO
             return float.TryParse(value, out resultat);
         }
         
+        /// <summary>
+        /// Check if string value is valid email
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool IsEmail(this string input)
+        {
+            var match = Regex.Match(input, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.IgnoreCase);
+            return match.Success;
+        }
         
       
     }
